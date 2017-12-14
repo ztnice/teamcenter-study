@@ -1,4 +1,4 @@
-package com.connor.soa.learning.folder;
+package com.kangle.study.soa.folder;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;

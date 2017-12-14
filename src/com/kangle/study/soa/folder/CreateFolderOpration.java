@@ -1,4 +1,4 @@
-package com.connor.soa.learning.folder;
+package com.kangle.study.soa.folder;
 
 import java.util.ArrayList;
 import java.util.List;

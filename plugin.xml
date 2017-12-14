@@ -40,8 +40,13 @@
       </command>
       <command
             name="soa创建文件夹"
-            categoryId="com.connor.soa.learning.folder.CreateFolderCommand"
-            id="com.connor.soa.learning.commands.CreateFolderCommand">
+            categoryId="com.kangle.study.soa.folder.CreateFolderCommand"
+            id="com.kangle.study.soa.commands.CreateFolderCommand">
+      </command>
+      <command
+            name="Excel导入文件"
+            categoryId="com.kangle.study.excel.ExcelImportCommand"
+            id="com.kangle.study.excel.commands.ExcelImportCommand">
       </command>
       
    </extension>
@@ -73,9 +78,15 @@
       </handler>
       
       <handler
-            commandId="com.connor.soa.learning.commands.CreateFolderCommand"
-            class="com.connor.soa.learning.folder.CreateFolderHandler">
+            commandId="com.kangle.study.soa.commands.CreateFolderCommand"
+            class="com.kangle.study.soa.folder.CreateFolderHandler">
       </handler>
+      
+      <handler
+            commandId="com.kangle.study.excel.commands.ExcelImportCommand"
+            class="com.kangle.study.excel.ExcelImportHandler">
+      </handler>
+      
    </extension>
    <extension
          point="org.eclipse.ui.bindings">
@@ -126,12 +137,18 @@
                   id="com.kangle.study.commands.CreateItemQueryCommand">
             </command>
              <command
-                  commandId="com.connor.soa.learning.commands.CreateFolderCommand"
+                  commandId="com.kangle.study.soa.commands.CreateFolderCommand"
                   mnemonic="S"
-                  id="com.connor.soa.learning.commands.CreateFolderCommand">
+                  id="com.kangle.study.soa.commands.CreateFolderCommand">
+            </command>
+             <command
+                  commandId="com.kangle.study.excel.commands.ExcelImportCommand"
+                  mnemonic="S"
+                  id="com.kangle.study.excel.commands.ExcelImportCommand">
             </command>
          </menu>
       </menuContribution>
+     
      
       <menuContribution
             locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">

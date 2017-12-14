@@ -16,8 +16,7 @@ Require-Bundle: org.eclipse.ui,
  com.teamcenter.rac.ui.commands;bundle-version="11000.2.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Export-Package: com.connor.soa.learning.folder,
- com.kangle.form,
+Export-Package: com.kangle.form,
  com.kangle.study,
  com.kangle.study.bom,
  com.kangle.study.dataSet,
@@ -27,6 +26,7 @@ Export-Package: com.connor.soa.learning.folder,
  com.kangle.study.item,
  com.kangle.study.property,
  com.kangle.study.queryItem,
+ com.kangle.study.soa.folder,
  com.microsoft.schemas.office.x2006.encryption,
  com.microsoft.schemas.office.x2006.encryption.impl,
  com.microsoft.schemas.office.x2006.keyEncryptor.certificate,
