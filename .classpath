@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry exported="true" kind="lib" path="poilib/com.teamcenter.rac.common_11000.2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="poilib/com.teamcenter.rac.ui.commands_11000.2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="poilib/commons-codec-1.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="poilib/commons-logging-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="poilib/dom4j-1.6.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="poilib/junit-4.11.jar"/>
+	<classpathentry exported="true" kind="lib" path="poilib/log4j-1.2.13.jar"/>
+	<classpathentry exported="true" kind="lib" path="poilib/poi-3.10-FINAL-20140208.jar"/>
+	<classpathentry exported="true" kind="lib" path="poilib/poi-examples-3.10-FINAL-20140208.jar"/>
+	<classpathentry exported="true" kind="lib" path="poilib/poi-excelant-3.10-FINAL-20140208.jar"/>
+	<classpathentry exported="true" kind="lib" path="poilib/poi-ooxml-3.10-FINAL-20140208.jar"/>
+	<classpathentry exported="true" kind="lib" path="poilib/poi-ooxml-schemas-3.10-FINAL-20140208.jar"/>
+	<classpathentry exported="true" kind="lib" path="poilib/poi-scratchpad-3.10-FINAL-20140208.jar"/>
+	<classpathentry exported="true" kind="lib" path="poilib/stax-api-1.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="poilib/xmlbeans-2.3.0.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
