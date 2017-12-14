@@ -1,5 +1,11 @@
 package com.kangle.study.excel;
 
-public class ExcelImportDialog {
+import com.teamcenter.rac.aif.AbstractAIFDialog;
+
+/**
+ * @author haozt
+ *
+ */
+public class ExcelImportDialog extends AbstractAIFDialog {
 
 }
