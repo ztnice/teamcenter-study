@@ -66,18 +66,13 @@ public class CreateFolderDialog extends AbstractAIFDialog implements ActionListe
 		
 		this.textField.setPreferredSize(new Dimension(100, 20));
 		this.label.setPreferredSize(new Dimension(80, 20));
-		
-		
-		
-		
+
 		this.onButton = new JButton("确定");
 		this.cancelButton = new JButton("取消");
 		
-		
 		this.onButton.addActionListener(this);
 		this.cancelButton.addActionListener(this);
-		
-		
+
 		buttonPanel.add(onButton);
 		buttonPanel.add(cancelButton);
 		connentPanel.add("1.1.left.top",label);
