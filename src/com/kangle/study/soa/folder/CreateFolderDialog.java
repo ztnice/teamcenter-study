@@ -1,5 +1,6 @@
 package com.kangle.study.soa.folder;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -20,6 +21,7 @@ import com.teamcenter.rac.kernel.TCComponentType;
 import com.teamcenter.rac.kernel.TCException;
 import com.teamcenter.rac.kernel.TCSession;
 import com.teamcenter.rac.util.MessageBox;
+import com.teamcenter.rac.util.PropertyLayout;
 import com.teamcenter.rac.util.iTextField;
 
 public class CreateFolderDialog extends AbstractAIFDialog implements ActionListener{
@@ -44,31 +46,46 @@ public class CreateFolderDialog extends AbstractAIFDialog implements ActionListe
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		// super.run();
+		super.run();
 		initUI();
 	}
 
 	public void initUI() {
-		setTitle("创建文件夹对话框");
-		Dimension dimension = new Dimension();
-		dimension.setSize(300, 70);
-		setPreferredSize(dimension);
-		JPanel jPanel = new JPanel(new FlowLayout());
-		
+		this.setSize(new Dimension(240, 140));
+		this.setLayout(new FlowLayout());
+		this.setTitle("创建文件夹对话框");
+		//定义3个panel，分别是顶层panel，内容panel和按钮panel
+		JPanel topPanel = new JPanel(new BorderLayout());
+		JPanel connentPanel = new JPanel(new PropertyLayout());
+		JPanel buttonPanel = new JPanel(new FlowLayout());
+		topPanel.setPreferredSize(new Dimension(220, 100));
+		connentPanel.setPreferredSize(new Dimension(160, 60));
+
 		this.textField = new iTextField(20);
 		this.label = new JLabel("文件夹名称:");
+		
+		this.textField.setPreferredSize(new Dimension(100, 20));
+		this.label.setPreferredSize(new Dimension(80, 20));
+		
+		
+		
+		
 		this.onButton = new JButton("确定");
 		this.cancelButton = new JButton("取消");
+		
+		
 		this.onButton.addActionListener(this);
 		this.cancelButton.addActionListener(this);
 		
-		jPanel.add(label);
-		jPanel.add(textField);
-		jPanel.add(onButton);
-		jPanel.add(cancelButton);
-		getContentPane().add(jPanel);
-//		pack();
-		centerToScreen(1.0D, 0.75D);
+		
+		buttonPanel.add(onButton);
+		buttonPanel.add(cancelButton);
+		connentPanel.add("1.1.left.top",label);
+		connentPanel.add("1.2.left.top",textField);
+		
+		topPanel.add(buttonPanel,BorderLayout.SOUTH);
+		topPanel.add(connentPanel, BorderLayout.NORTH);
+		this.add(topPanel);
 		this.setVisible(true);
 	}
 
