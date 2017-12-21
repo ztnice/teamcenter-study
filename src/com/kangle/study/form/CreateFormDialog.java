@@ -36,10 +36,10 @@ public class CreateFormDialog extends AbstractAIFDialog implements ActionListene
 	private String folderName;
 	private TCComponent tccomponent;
 	private JDialog jDialog ;
-
+	private AbstractAIFUIApplication app;
 	private Object button;
 	public CreateFormDialog(){
-		AbstractAIFUIApplication app = AIFUtility.getCurrentApplication();
+		this.app = AIFUtility.getCurrentApplication();
 		session = (TCSession) app.getSession();
 		tccomponent = (TCComponent) app.getTargetComponent();
 	}
@@ -72,14 +72,23 @@ public class CreateFormDialog extends AbstractAIFDialog implements ActionListene
 				
 				try {
 					
-					t = (TCComponentFormType) session.getTypeComponent("Form");
-					TCComponentForm f =  t.create(itext.getText(), "My Form Description","Form");
+					t = (TCComponentFormType) session.getTypeComponent("ItemRevision Master");
+					TCComponentForm f =  t.create(itext.getText(), "My Form Description","ItemRevision Master");
 //					System.out.println(tccomponent.getType());
 					if(tccomponent instanceof TCComponentFolder){
+						TCComponentFolder folder = (TCComponentFolder) app.getTargetComponent();
+						TCComponent folders[] = folder.getRelatedComponents("contents");	
+						boolean isRepeat = CreateFormDialog.checkRepeat(folders,itext.getText());
+						if(isRepeat){
+							MessageBox.post("傻吊，名字重复了，改下名字","提示",MessageBox.ERROR);
+						}else{
 						tccomponent.add("contents", f);
+						jDialog.dispose();
+						}
 					}
 					else if(tccomponent instanceof TCComponentItem){
 						tccomponent.add("IMAN_reference", f);
+						jDialog.dispose();
 					}else if(tccomponent instanceof TCComponentItemRevision){
 						tccomponent.add("IMAN_specification", f);
 						
@@ -104,11 +113,21 @@ public class CreateFormDialog extends AbstractAIFDialog implements ActionListene
 		centerToScreen(1.0D, 0.75D);
 		this.setVisible(true);
 	}
-	@Override
-	public void actionPerformed(ActionEvent e) {
-			if(e.getSource().equals(button)){
-				
+	public static boolean checkRepeat(TCComponent[] components,String str){
+		for(TCComponent component : components){
+//			System.out.println(component.toString());
+			if(str.equals(component.toString())){
+				return true;
 			}
+		}
+		return false;
+	}
+	
+	
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
