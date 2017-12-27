@@ -56,6 +56,7 @@ public class CreateItemOperation extends AbstractAIFOperation{
 			if(component instanceof TCComponentFolder){
 				component.add("contents", item);
 				item.setProperty("object_desc", lab_propertyName);
+				
 				MessageBox.post("成功生成item"+itemName,"成功",MessageBox.INFORMATION);
 			}else{
 				MessageBox.post("请选择文件夹","警告",MessageBox.WARNING);
